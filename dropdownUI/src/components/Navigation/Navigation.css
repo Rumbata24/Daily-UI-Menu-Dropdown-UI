@@ -1,0 +1,154 @@
+section {
+  background-color: var(--main-color);
+
+  padding: 2rem;
+}
+
+.navigation ul {
+  display: flex;
+  align-items: center;
+  padding: 100px;
+  padding-bottom: 30px;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.navigation ul li a {
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  font-size: 1.6rem;
+  transition: all 0.3s ease-in-out;
+  font-family: var(--font-family);
+}
+
+.navigation ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #4592e3;
+  transition: width 0.3s ease-in-out;
+}
+
+.navigation ul li a.active::before {
+  width: 100%;
+}
+
+.navigation ul li a.active {
+  color: #4592e3; /* Change text color for active link */
+}
+
+.dropdown-container {
+  background: linear-gradient(#40cbe4, #4688e3);
+
+  max-width: 1090px;
+  border-radius: 20px;
+  box-shadow: 0px 43px 158px -39px rgba(28, 24, 124, 0.45);
+
+  display: none;
+  padding-block: 7rem;
+  transition: display 0.3s ease-in-out;
+}
+
+.dropdown-container.visible {
+  display: flex;
+}
+
+.dropdown-container ul {
+  padding: 0 6rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dropdown-container ul h2 {
+  font-size: 1.8rem;
+  letter-spacing: 4px;
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  color: var(--main-color);
+  margin-bottom: 2rem;
+  font-weight: 500;
+  padding-left: 2rem;
+}
+
+.dropdown-container ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--main-color);
+  height: 50px;
+  width: 220px;
+  border-radius: 25px;
+  padding-left: 2rem;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.dropdown-container ul li:hover {
+  background-color: rgba(167, 237, 250, 0.6);
+}
+
+.dropdown-container ul:nth-child(1) {
+  border-right: 1px solid rgba(21, 20, 45, 0.18);
+}
+.dropdown-container ul:nth-child(2) {
+  border-right: 1px solid rgba(21, 20, 45, 0.18);
+}
+
+.servers {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.servers h3,
+.servers span,
+.servers p {
+  width: 200px;
+  color: var(--main-color);
+  font-family: var(--font-family);
+}
+
+.servers h3 {
+  font-size: 1.8rem;
+
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.servers p,
+.servers span {
+  font-size: 1.4rem;
+}
+
+.servers .end-text {
+  margin-top: 30%;
+}
+
+@media screen and (max-width: 1050px) {
+  .dropdown-container {
+    flex-direction: column;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .dropdown-container ul {
+    width: 100%;
+  }
+
+  .navigation ul {
+    padding: 20px;
+    margin: 0 auto;
+  }
+}
